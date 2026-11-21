@@ -136,8 +136,8 @@ export function DashboardMock() {
                 transition={{ delay: 0.5 + i * 0.08, duration: 0.4 }}
                 className={cx(
                   'flex items-center gap-2 border-b border-line/60 pb-1.5 last:border-0',
-                  // The smallest phones cannot fit five rows above the status bar; show three.
-                  i > 2 && 'max-[379px]:hidden',
+                  // Below the xs breakpoint the card cannot fit five rows above the status bar.
+                  i > 2 && 'max-xs:hidden',
                 )}
               >
                 <Building2 className="size-3.5 shrink-0 text-faint" />

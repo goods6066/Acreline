@@ -73,7 +73,7 @@ function ScannerVisual() {
             >
               <Building2 className="size-3.5 shrink-0 text-faint" />
               <span className="min-w-0 flex-1 truncate text-[12px] text-fg/90">{row.address}</span>
-              <span className={cx('shrink-0 text-[10px] max-[379px]:hidden', row.tone)}>{row.tag}</span>
+              <span className={cx('shrink-0 text-[10px] max-xs:hidden', row.tone)}>{row.tag}</span>
               <span className="w-14 shrink-0 text-right text-[11px] tabular-nums text-muted">{row.price}</span>
             </motion.li>
           ))}

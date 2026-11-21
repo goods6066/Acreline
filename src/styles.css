@@ -8,6 +8,10 @@
 @theme {
   --font-sans: 'Google Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
+  /* Phones narrower than this cannot fit the full compact deal feed, so the
+     product mock and the scanner panel drop their secondary row details. */
+  --breakpoint-xs: 380px;
+
   --color-bg: #0b0908;
   --color-surface: #121010;
   --color-surface-2: #191514;
