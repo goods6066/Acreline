@@ -10,7 +10,10 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    # Pinned like the actions: `ubuntu-latest` moves to a new image on GitHub's
+    # schedule, which changes the preinstalled toolchain without a commit here.
+    # To move it, bump this label deliberately.
+    runs-on: ubuntu-26.04
     steps:
       # Actions are pinned to full commit SHAs so a retagged release cannot
       # change what CI runs; the trailing comment records the release.
