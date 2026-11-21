@@ -128,13 +128,17 @@ export function DashboardMock() {
             ))}
           </div>
           <ul className="flex min-h-0 flex-1 flex-col justify-between gap-1.5">
-            {rows.slice(0, 6).map((row, i) => (
+            {rows.slice(0, 5).map((row, i) => (
               <motion.li
                 key={row.address}
                 initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + i * 0.08, duration: 0.4 }}
-                className="flex items-center gap-2 border-b border-line/60 pb-1.5 last:border-0"
+                className={cx(
+                  'flex items-center gap-2 border-b border-line/60 pb-1.5 last:border-0',
+                  // The smallest phones cannot fit five rows above the status bar; show three.
+                  i > 2 && 'max-[379px]:hidden',
+                )}
               >
                 <Building2 className="size-3.5 shrink-0 text-faint" />
                 <span className="min-w-0 flex-1">

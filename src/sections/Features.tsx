@@ -55,9 +55,11 @@ function ScannerVisual() {
     <div className="absolute inset-0 p-6 pb-0">
       <div className="depth relative h-[calc(100%+2px)] overflow-hidden rounded-t-[16px] bg-bg/50 p-3.5">
         <div className="flex items-center gap-2 text-[11px] text-faint">
-          <Sparkles className="size-3.5 text-accent" />
-          Scanning 18 sources
-          <span className="ml-auto rounded-[6px] bg-accent/15 px-1.5 py-0.5 text-accent">128 matched</span>
+          <Sparkles className="size-3.5 shrink-0 text-accent" />
+          <span className="min-w-0 truncate">Scanning 18 sources</span>
+          <span className="ml-auto shrink-0 whitespace-nowrap rounded-[6px] bg-accent/15 px-1.5 py-0.5 text-accent">
+            128 matched
+          </span>
         </div>
         <ul className="mt-2 flex flex-col gap-1.5">
           {dealRows.map((row, i) => (
@@ -71,14 +73,14 @@ function ScannerVisual() {
             >
               <Building2 className="size-3.5 shrink-0 text-faint" />
               <span className="min-w-0 flex-1 truncate text-[12px] text-fg/90">{row.address}</span>
-              <span className={cx('shrink-0 text-[10px]', row.tone)}>{row.tag}</span>
+              <span className={cx('shrink-0 text-[10px] max-[379px]:hidden', row.tone)}>{row.tag}</span>
               <span className="w-14 shrink-0 text-right text-[11px] tabular-nums text-muted">{row.price}</span>
             </motion.li>
           ))}
         </ul>
         <div className="mt-2 flex items-center gap-2 text-[10px] text-faint">
-          <span className="size-1.5 rounded-full bg-accent-2" />
-          New source connected: county probate index
+          <span className="size-1.5 shrink-0 rounded-full bg-accent-2" />
+          <span className="min-w-0 truncate">New source connected: county probate index</span>
         </div>
         <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px animate-dash bg-gradient-to-r from-transparent via-accent to-transparent" />
       </div>
