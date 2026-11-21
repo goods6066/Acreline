@@ -21,7 +21,7 @@ export function Pricing() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid w-full max-w-2xl gap-4 lg:max-w-none lg:grid-cols-3">
           {pricing.tiers.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 0.08}>
               <article
